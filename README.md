@@ -17,6 +17,7 @@ As the project progresses, I hope to implement more Machine Learning and Artific
 The project is in the ideation stage.
 ## Authors, Acknowledgment and Contact
 Developed by Ben Graham
+
 b.graham@queensu.ca
 ## License
 This project is open source under the GNU General Public License v3.0
