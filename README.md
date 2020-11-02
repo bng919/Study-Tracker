@@ -6,9 +6,13 @@ The goal of this program is to be a simple, easy to use application to track how
 As the project progresses, I hope to implement more Machine Learning and Artificial Intelligence techniques into the application to provide more insightful feedback on time usage.
 ## Features
 -Simple GUI interface
+
 -Menu to select which project (and subproject) you are working on
+
 -Start and stop work buttons
+
 -Settings and Stats page
+
 ## Project Status
 The project is in the ideation stage.
 ## Authors, Acknowledgment and Contact
