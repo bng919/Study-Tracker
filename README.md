@@ -14,7 +14,7 @@ As the project progresses, I hope to implement more Machine Learning and Artific
 -Settings and Stats page
 
 ## Project Status
-The project is in the ideation stage.
+The project is in early development stage.
 ## Authors, Acknowledgment and Contact
 Developed by Ben Graham
 
