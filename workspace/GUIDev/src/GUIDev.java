@@ -125,6 +125,7 @@ public class GUIDev implements ItemListener, ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		System.out.println(arg0);
 		if("General".equals(arg0.getActionCommand())) {
 			System.out.println("General Settings");
 		} else if("Appearance".equals(arg0.getActionCommand())) {
