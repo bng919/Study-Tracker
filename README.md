@@ -6,7 +6,7 @@ The goal of this program is to be a simple, easy to use application to track how
 
 As the project progresses, I hope to implement more Machine Learning and Artificial Intelligence techniques into the application to provide more insightful feedback on time usage.
 
-Further planning information can be found in /org/Study-Tracker-Inital-Plan.pdf
+Further planning information can be found in [a relative link](other_file.md)
 ## Features
 -Simple GUI interface
 
