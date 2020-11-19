@@ -27,20 +27,28 @@ public class GUIDev implements ItemListener, ActionListener {
 		cb.addItemListener(this);
 		comboBoxPanel.add(cb);
 		
+		JButton start1 = new JButton("Start Timer");
+		JButton stop1 = new JButton("Stop Timer");
+		JButton start2 = new JButton("Start Timer");
+		JButton stop2 = new JButton("Stop Timer");
+		JButton start3 = new JButton("Start Timer");
+		JButton stop3 = new JButton("Stop Timer");
+		
+		
 		JPanel card1 = new JPanel();
         //card1.add(new JLabel(comboBoxItems[0]));
-        card1.add(new JButton("Start Timer"));
-        card1.add(new JButton("Stop Timer"));
+        card1.add(start1);
+        card1.add(stop1);
 
 		JPanel card2 = new JPanel();
         //card2.add(new JLabel(comboBoxItems[1]));
-        card2.add(new JButton("Start Timer"));
-        card2.add(new JButton("Stop Timer"));
+        card2.add(start2);
+        card2.add(stop2);
         
 		JPanel card3 = new JPanel();
 		//card3.add(new JLabel(comboBoxItems[2]));
-        card3.add(new JButton("Start Timer"));
-        card3.add(new JButton("Stop Timer"));
+        card3.add(start3);
+        card3.add(stop3);
         
         cards = new JPanel(new CardLayout());
         cards.add(card1, comboBoxItems[0]);
@@ -54,41 +62,42 @@ public class GUIDev implements ItemListener, ActionListener {
 	
 	public JMenuBar createMenuBar() {
         JMenuBar menuBar;
-        JMenu menu;
-        JMenuItem menuItem, menuItem2;
-
-        //Create the menu bar.
+        JMenu sett, stats;
+        JMenuItem gen, app, viewStat;
+        
         menuBar = new JMenuBar();
+
+        //Start -- Settings Menu items
+        sett = new JMenu("Settings");
+        sett.setMnemonic(KeyEvent.VK_S);
+        menuBar.add(sett);
  
-        //Build the first menu.
-        menu = new JMenu("Settings");
-        menu.setMnemonic(KeyEvent.VK_A);
-        menu.getAccessibleContext().setAccessibleDescription(
-                "Access Settings");
-        menuBar.add(menu);
- 
-        //a group of JMenuItems
-        menuItem = new JMenuItem("General",
-                                 KeyEvent.VK_T);
-        //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
-        menuItem.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_1, ActionEvent.ALT_MASK));
-        menuItem.getAccessibleContext().setAccessibleDescription(
-                "Access General Settings");
-        menuItem.addActionListener(this);
-        menu.add(menuItem);
+        //General submenu
+        gen = new JMenuItem("General", KeyEvent.VK_G);
+        gen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
+        gen.addActionListener(this);
+        sett.add(gen);
+        
+        //Appearance submenu
+        app = new JMenuItem("Appearance", KeyEvent.VK_A);
+        app.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_2, ActionEvent.ALT_MASK));
+        app.addActionListener(this);
+        sett.add(app);       
+        //End -- Settings Menu items
         
         
-      //a group of JMenuItems
-        menuItem2 = new JMenuItem("Appearance",
-                                 KeyEvent.VK_T);
-        //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
-        menuItem2.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_2, ActionEvent.ALT_MASK));
-        menuItem2.getAccessibleContext().setAccessibleDescription(
-                "Access Appearance Settings");
-        menuItem2.addActionListener(this);
-        menu.add(menuItem2);
+        
+        //Start -- Stats Menu items
+        stats = new JMenu("Stats");
+        stats.setMnemonic(KeyEvent.VK_A);
+        menuBar.add(stats);
+        
+        viewStat = new JMenuItem("View Stats", KeyEvent.VK_V);
+        viewStat.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_3, ActionEvent.ALT_MASK));
+        viewStat.addActionListener(this);
+        stats.add(viewStat);
+        //End -- Stats Menu items
+        
         
  
         return menuBar;
@@ -119,18 +128,15 @@ public class GUIDev implements ItemListener, ActionListener {
 
 	@Override
 	public void itemStateChanged(ItemEvent arg0) {
+		System.out.println("Changed tab");
 		CardLayout change = (CardLayout)(cards.getLayout());
 		change.show(cards, (String)arg0.getItem());
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		System.out.println(arg0);
-		if("General".equals(arg0.getActionCommand())) {
-			System.out.println("General Settings");
-		} else if("Appearance".equals(arg0.getActionCommand())) {
-			System.out.println("Appearance Settings");
-		}
+		System.out.println(arg0.getActionCommand());
+
 		
 	}
 }
